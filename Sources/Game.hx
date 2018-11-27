@@ -16,8 +16,8 @@ class Game
 	{
 		SystemManager.add(renderer);
 		var e = EntityManager.create('circle');
-		e.add_component(new Transform(10, 100));
-		e.add_component(new Rect(50, 100, kha.Color.Red, e.get_component('transform').data));
+		e.add_component(new Transform(100, 100));
+		e.add_component(new Circle(100, kha.Color.Red, e.get_component('transform').data));
 	}
 
 }
@@ -59,7 +59,7 @@ class Circle extends Drawable
 	override public function draw(g:Graphics)
 	{
 		g.color = data.color;
-		g.fillCircle(transform.x, transform.y, data.radius);
+		g.fillCircle(transform.position.x, transform.position.y, data.radius);
 	}
 
 }
